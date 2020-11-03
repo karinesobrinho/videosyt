@@ -11,7 +11,16 @@ class Home extends StatelessWidget {
         ),
         backgroundColor: Colors.black,
         elevation: 0,
+        actions: <Widget>[
+          Align(
+            alignment: Alignment.center,
+            child: Text('0'),
+          ),
+          IconButton(icon: Icon(Icons.star), onPressed: () {}),
+          IconButton(icon: Icon(Icons.search), onPressed: () {})
+        ],
       ),
+      body: Container(),
     );
   }
 }
