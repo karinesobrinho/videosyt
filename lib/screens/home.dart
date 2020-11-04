@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:videosyt/delegates/data_search.dart';
 
 class Home extends StatelessWidget {
   @override
@@ -17,7 +18,11 @@ class Home extends StatelessWidget {
             child: Text('0'),
           ),
           IconButton(icon: Icon(Icons.star), onPressed: () {}),
-          IconButton(icon: Icon(Icons.search), onPressed: () {})
+          IconButton(
+              icon: Icon(Icons.search),
+              onPressed: () {
+                showSearch(context: context, delegate: DataSearch());
+              })
         ],
       ),
       body: Container(),
