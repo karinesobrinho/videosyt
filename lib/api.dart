@@ -12,8 +12,8 @@ const API_KEY = 'AIzaSyCy5VBzEc2eIV6-MAu09X_6FumRk_JPOhU';
 class Api {
   search(String search) async {
     http.Response response = await http.get(
-        "https://www.googleapis.com/youtube/v3/search?part=snippet&q=$search&type=video&key=AIzaSyCy5VBzEc2eIV6-MAu09X_6FumRk_JPOhU&maxResults=10");
-    decode(response);
+      "https://www.googleapis.com/youtube/v3/search?part=snippet&q=$search&type=video&key=AIzaSyCy5VBzEc2eIV6-MAu09X_6FumRk_JPOhU&maxResults=10");
+    return decode(response);
   }
 
   List<Video> decode(http.Response response) {
