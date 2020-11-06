@@ -2,6 +2,7 @@ import 'package:bloc_pattern/bloc_pattern.dart';
 import 'package:flutter/material.dart';
 import 'package:videosyt/bloc/videos_bloc.dart';
 import 'package:videosyt/delegates/data_search.dart';
+import 'package:videosyt/widgets/video_tile.dart';
 
 class Home extends StatelessWidget {
   @override
@@ -30,7 +31,20 @@ class Home extends StatelessWidget {
                 })
           ],
         ),
-        body: Container()
-        );
+        backgroundColor: Colors.black87,
+        body: StreamBuilder(
+          builder: (context, snapshot) {
+            if (snapshot.hasData) {
+              return ListView.builder(
+                itemBuilder: (context, index) {
+                  return VideoTile(snapshot.data[index]);
+                },
+                itemCount: snapshot.data.length,
+              );
+            } else
+              return Container();
+          },
+          stream: BlocProvider.of<VideosBloc>(context).outVideos,
+        ));
   }
 }
