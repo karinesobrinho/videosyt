@@ -1,7 +1,8 @@
 import 'package:bloc_pattern/bloc_pattern.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_youtube/flutter_youtube.dart';
 import 'package:videosyt/bloc/favorite_bloc.dart';
-
+import 'package:videosyt/models/video.dart';
 import '../api.dart';
 
 class Favorites extends StatelessWidget {
@@ -25,7 +26,7 @@ class Favorites extends StatelessWidget {
               children: snapshot.data.values.map((v){
                 return InkWell(
                   onTap: (){
-                    .playYoutubeVideoById(
+                    FlutterYoutube.playYoutubeVideoById(
                         apiKey: API_KEY,
                         videoId: v.id
                     );

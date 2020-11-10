@@ -15,10 +15,10 @@ class Home extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           title: Container(
-            height: 25.0,
+            height: 25,
             child: Image.asset('assets/logo.png'),
           ),
-          backgroundColor: Colors.black,
+          backgroundColor: Colors.black87,
           elevation: 0,
           actions: <Widget>[
             Align(
