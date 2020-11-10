@@ -16,7 +16,10 @@ class Video {
       );
     } else {
       return Video(
-        
+        id: json['videoId'],
+        title: json['title'],
+        channel: json['channel'],
+        thumb: json['thumb'],
       );
     }
   }

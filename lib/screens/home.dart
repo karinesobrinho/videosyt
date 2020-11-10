@@ -4,6 +4,7 @@ import 'package:videosyt/bloc/favorite_bloc.dart';
 import 'package:videosyt/bloc/videos_bloc.dart';
 import 'package:videosyt/delegates/data_search.dart';
 import 'package:videosyt/models/video.dart';
+import 'package:videosyt/screens/favorites.dart';
 import 'package:videosyt/widgets/video_tile.dart';
 
 class Home extends StatelessWidget {
@@ -23,14 +24,20 @@ class Home extends StatelessWidget {
             Align(
               alignment: Alignment.center,
               child: StreamBuilder<Map<String, Video>>(
-                stream: BlocProvider.of<FavoriteBloc>(context).outFav,
-                builder: (context, snapshot){
-                  if(snapshot.hasData) return Text("${snapshot.data.length}");
-                  else return Container();
-                }
-              ),
+                  stream: BlocProvider.of<FavoriteBloc>(context).outFav,
+                  builder: (context, snapshot) {
+                    if (snapshot.hasData)
+                      return Text("${snapshot.data.length}");
+                    else
+                      return Container();
+                  }),
             ),
-            IconButton(icon: Icon(Icons.star), onPressed: () {}),
+            IconButton(
+                icon: Icon(Icons.star),
+                onPressed: () {
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => Favorites()));
+                }),
             IconButton(
                 icon: Icon(Icons.search),
                 onPressed: () async {
