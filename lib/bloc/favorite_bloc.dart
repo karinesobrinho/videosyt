@@ -1,10 +1,9 @@
 import 'package:bloc_pattern/bloc_pattern.dart';
 import 'dart:convert';
-import 'package:bloc_pattern/bloc_pattern.dart';
-import 'package:fluttertube/models/video.dart';
 import 'package:rxdart/rxdart.dart';
 import 'dart:async';
-import 'package:shared_preferences/shared_preferences.dart';
+//import 'package:shared_preferences/shared_preferences.dart';
+import 'package:videosyt/models/video.dart';
 
 class FavoriteBloc implements BlocBase {
 
